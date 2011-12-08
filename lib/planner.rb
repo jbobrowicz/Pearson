@@ -1,9 +1,10 @@
 class Planner
   def initialize(argv, input, output)
-    @input = input
-    @output = output
-    @function = argv[0]
+    @input = InputReader.new(input)
+    @output = output #OutputWriter.new(output)
+    @function = argv[0] #FunctionFactory.create_function(argv)
   end
+  
   def run
     numbers = read_numbers
     result = transform(numbers)
@@ -13,10 +14,12 @@ class Planner
   private
   
   def read_numbers
-    @input.read.split(",").map {|s| s.to_f}
+    @input.read_numbers
+    # @input.read.split(",").map {|s| s.to_f}
   end
   
   def transform(numbers)
+   # @function.apply(numbers)
     case @function
     when "identity"
       numbers.map {|n| n.to_s}.join(",")
@@ -28,6 +31,7 @@ class Planner
   end
   
   def write_output(result)
+    # @output.write_output(result)
     @output << result
   end
 end
