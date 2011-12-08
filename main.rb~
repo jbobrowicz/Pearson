@@ -1,7 +1,16 @@
-# puts ARGV.inspect
+require File.join(File.dirname(__FILE__), "lib/planner")
 function = ARGV.first
-if function == "identity"
-  $stdout.write $stdin.read
-else
-  puts "Error: Unsupported function #{function}"
+
+begin
+  planner = Planner.new(ARGV, $stdin, $stdout)
+  planner.run
+rescue => e
+  $stdout.puts e
 end
+
+
+
+
+
+
+

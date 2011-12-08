@@ -1,6 +1,15 @@
-function = ARGV.first
-if function == "identity"
-  $stdout.write $stdin.read
-else
-  puts "Error: Unsupported function #{function}"
+require File.join(File.dirname(__FILE__), "lib/planner")
+
+begin
+  planner = Planner.new(ARGV, $stdin, $stdout)
+  planner.run
+rescue => e
+  $stdout.puts e
 end
+
+
+
+
+
+
+
