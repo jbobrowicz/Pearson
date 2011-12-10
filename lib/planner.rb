@@ -1,4 +1,4 @@
-class Planner
+class Planner 
   def initialize(argv, input, output)
     @input = InputReader.new(input)
     @output = output #OutputWriter.new(output)
