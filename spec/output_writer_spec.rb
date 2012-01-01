@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "../lib/output_writer")
+require_relative "../lib/output_writer"
 
 describe OutputWriter do
   def output_of_writer(input)

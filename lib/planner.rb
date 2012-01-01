@@ -1,5 +1,5 @@
-require File.join(File.dirname(__FILE__), "input_reader")
-require File.join(File.dirname(__FILE__), "output_writer")
+require_relative "input_reader"
+require_relative "output_writer"
 
 class Planner 
   def initialize(argv, input, output)

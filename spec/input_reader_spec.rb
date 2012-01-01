@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "../lib/input_reader")
+require_relative "../lib/input_reader"
 
 describe InputReader do
   it "should have method read_numbers" do

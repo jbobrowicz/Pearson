@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "lib/planner") 
+require_relative "lib/planner"
 
 begin
   planner = Planner.new(ARGV, $stdin, $stdout)

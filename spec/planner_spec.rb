@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "../lib/planner")
+require_relative "../lib/planner"
 
 describe Planner do
   def planner_output_for(function, input)
