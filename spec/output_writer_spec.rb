@@ -1,12 +1,4 @@
-class OutputWriter
-  def initialize(output)
-    @output = output
-  end
-  def write_output(items)
-    @output << items.map {|n| n.to_s}.join(",")
-  end
-end
-  
+require File.join(File.dirname(__FILE__), "../lib/output_writer")
 
 describe OutputWriter do
   def output_of_writer(input)

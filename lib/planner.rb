@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), "input_reader")
+require File.join(File.dirname(__FILE__), "output_writer")
 
 class Planner 
   def initialize(argv, input, output)
