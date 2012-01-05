@@ -5,7 +5,7 @@ describe Planner do
     output = StringIO.new
     planner = Planner.new([function], StringIO.new(input), output)
     planner.run
-    output.string 
+    output.string
   end
   it "should calculate the mean of one number" do
     planner_output_for("mean", "10").should == "10.0"
@@ -16,7 +16,7 @@ describe Planner do
   it "should support identity" do
     planner_output_for("identity", "10,20").should == "10.0,20.0"
   end
-  it "should output error message for an unsupported function" do 
+  it "should output error message for an unsupported function" do
     planner = Planner.new(["bbbbbbbb"], StringIO.new("10,20"), StringIO.new)
     lambda { planner.run }.should raise_error
   end

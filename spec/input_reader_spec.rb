@@ -6,8 +6,8 @@ describe InputReader do
     input_reader.read_numbers
   end
   it "should return an array" do
-     input_reader = InputReader.new(StringIO.new("10,15"))
-     input_reader.read_numbers.should be_an Array
+    input_reader = InputReader.new(StringIO.new("10,15"))
+    input_reader.read_numbers.should be_an Array
   end
   it "should return an array of numbers read from a stream" do
     input_reader = InputReader.new(StringIO.new("10,20"))
