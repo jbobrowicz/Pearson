@@ -9,4 +9,8 @@ describe FunctionFactory do
     mean = FunctionFactory.create_function(["mean"])
     mean.should be_an MeanFunction
   end
+  it "should create median function" do
+    median = FunctionFactory.create_function(["median"])
+    median.should be_an MedianFunction
+  end
 end

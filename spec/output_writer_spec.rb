@@ -8,6 +8,7 @@ describe OutputWriter do
     output_writer.write_output(input)
     output.string
   end
+  
   # pierwszy rodzaj testów "concrete tests" lub "data driven test"
 
   it "should output empty array" do
@@ -30,5 +31,4 @@ describe OutputWriter do
     y.should_receive(:to_s).and_return("b")
     output_of_writer([x, y]).should == "a,b"
   end
-  
 end

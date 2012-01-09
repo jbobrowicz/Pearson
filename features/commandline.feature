@@ -19,4 +19,10 @@ Feature: commandline support
     And function "mean"
     When the program is run
     Then the result should be "2.0"
- 
+
+  @median
+  Scenario: Story #4 - Median function
+    Given input "1,2,3"
+    And function "median"
+    When the program is run
+    Then the result should be "2.0"
