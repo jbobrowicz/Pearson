@@ -1,27 +1,19 @@
 require_relative "input_reader"
-require_relative "output_writer"
 require_relative "function_factory"
+require_relative "output_writer_factory"
 
 class Planner
   def initialize(argv, input, output)
     @input = InputReader.new(input)
-    @output = OutputWriter.new(output)
-    
-    # ...zgapiejka output_writer_factory:
-    # if argv.last == "html"
-    #   @output = HtmlOutputWriter.new(output)
-    # else
-    #   @output = CsvOutputWriter.new(output)
-    # end
-    
-    # @output = OutputWriterFactory.create_output_writer(argv, output)
+    @output = OutputWriterFactory.create_output_writer(argv, output)
     @function = FunctionFactory.create_function(argv)
   end
 
   def run
-    numbers = read_numbers
-    result = transform(numbers)
-    write_output(result) 
+    # numbers = read_numbers
+    # result = transform(numbers)
+    # write_output(result) 
+    write_output transform read_numbers
   end
 
   private

@@ -1,4 +1,4 @@
-class OutputWriter
+class CSVOutputWriter
   def initialize(output)
     @output = output
   end

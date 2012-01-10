@@ -1,10 +1,10 @@
-require_relative "../lib/output_writer"
+require_relative "../lib/csv_output_writer"
 require_relative "../lib/function_factory"
 
-describe OutputWriter do
+describe CSVOutputWriter do
   def output_of_writer(input)
     output = StringIO.new
-    output_writer = OutputWriter.new(output)
+    output_writer = CSVOutputWriter.new(output)
     output_writer.write_output(input)
     output.string
   end
