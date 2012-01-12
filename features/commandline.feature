@@ -32,11 +32,17 @@ Feature: commandline support
     Given input "1,2,3"
     And function "variance"
     When the program is run
-    Then the result should be "2.0"
+    Then the result should be "1.0"
 
   @stddev
   Scenario: Story #4 - Stddev function
     Given input "1,2,3"
     And function "stddev"
     When the program is run
-    Then the result should be "2.0"
+    Then the result should be "1.0"
+
+
+
+
+
+
