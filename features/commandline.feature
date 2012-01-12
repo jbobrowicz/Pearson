@@ -26,3 +26,17 @@ Feature: commandline support
     And function "median"
     When the program is run
     Then the result should be "2.0"
+
+  @variance
+  Scenario: Story #4 - Variance function
+    Given input "1,2,3"
+    And function "variance"
+    When the program is run
+    Then the result should be "2.0"
+
+  @stddev
+  Scenario: Story #4 - Stddev function
+    Given input "1,2,3"
+    And function "stddev"
+    When the program is run
+    Then the result should be "2.0"

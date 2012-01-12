@@ -12,7 +12,7 @@ class Planner
   def run
     # numbers = read_numbers
     # result = transform(numbers)
-    # write_output(result) 
+    # write_output(result)
     write_output transform read_numbers
   end
 

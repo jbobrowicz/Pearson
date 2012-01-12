@@ -11,6 +11,10 @@ class FunctionFactory
       MeanFunction.new
     when "median"
       MedianFunction.new
+    when "variance"
+      MedianFunction.new
+    when "stddev"
+      MedianFunction.new
     else
       raise "Error: Unsupported function #{@function}"
     end

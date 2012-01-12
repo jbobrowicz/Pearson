@@ -3,3 +3,4 @@ class MedianFunction
     [numbers.sort[numbers.size/2]]
   end
 end
+
