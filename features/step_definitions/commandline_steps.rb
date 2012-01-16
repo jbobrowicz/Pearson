@@ -23,3 +23,14 @@ Then /^the result should indicate an error$/ do
   @actual_result.should include("Error")
 end
 
+Given /^output type is default$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Given /^output type is not "([^"]*)"$/ do |expected_results|
+  @actual_result.should_not == expected_results
+end
+
+Then /^the result should not be "([^"]*)"$/ do |expected_results|
+  @actual_result.should_not == expected_results
+end

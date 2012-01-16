@@ -13,4 +13,12 @@ describe FunctionFactory do
     median = FunctionFactory.create_function(["median"])
     median.should be_an MedianFunction
   end
+  it "should create variance function" do
+    var = FunctionFactory.create_function(["variance"])
+    var.should be_an VarianceFunction
+  end
+  it "should create stddev function" do
+    stddev = FunctionFactory.create_function(["stddev"])
+    stddev.should be_an StddevFunction
+  end
 end
