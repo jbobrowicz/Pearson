@@ -5,7 +5,7 @@ describe Planner do
   def planner_output_for(cfg)
     output = StringIO.new
     #planner = Planner.new([function], StringIO.new(input), output)
-    planner = Planner.new([cfg.function, cfg.input])
+    planner = Planner.new(cfg)
     planner.run
     output.string
   end
