@@ -1,12 +1,13 @@
 require_relative "input_reader"
 require_relative "function_factory"
 require_relative "output_writer_factory"
+require_relative "cfg"
 
 class Planner
-  def initialize(argv, input, output)
-    @input = InputReader.new(input)
-    @output = OutputWriterFactory.create_output_writer(argv, output)
-    @function = FunctionFactory.create_function(argv)
+  def initialize(cfg)
+    @input = InputReader.new(cfg.input)
+    @output = OutputWriterFactory.create_output_writer(cfg.output)
+    @function = FunctionFactory.create_function(cfg.function)
   end
 
   def run

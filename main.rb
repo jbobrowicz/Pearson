@@ -1,7 +1,9 @@
 require_relative "lib/planner"
+require_relative "lib/cfg"
 
 begin
-  planner = Planner.new(ARGV, $stdin, $stdout)
+  cfg = Cfg.new
+  planner = Planner.new(cfg)
   planner.run
 rescue => e
   $stdout.puts e

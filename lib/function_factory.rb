@@ -1,12 +1,14 @@
+require_relative "cfg"
 require_relative "identity_function"
 require_relative "mean_function"
 require_relative "median_function"
 require_relative "variance_function"
 require_relative "stddev_function"
 
+
 class FunctionFactory
-  def self.create_function(argv)
-    case argv.first
+  def self.create_function(cfg)
+    case cfg.function
     when "identity"
       IdentityFunction.new
     when "mean"
