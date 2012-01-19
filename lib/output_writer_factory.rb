@@ -5,11 +5,11 @@ require_relative "html_output_writer"
 require_relative "function_factory"
 
 class OutputWriterFactory
-  def self.create_output_writer(cfg)
-    if cfg.output_format == "html"
-      HtmlOutputWriter.new(cfg.output)
+  def self.create_output_writer(output_format, output)
+    if output_format == "html"
+      HtmlOutputWriter.new(output)
     else
-      CSVOutputWriter.new(cfg.output)
+      CSVOutputWriter.new(output)
     end
   end
 end

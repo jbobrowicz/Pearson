@@ -1,22 +1,22 @@
 class Cfg
-  def initialize
-    @input = $stdin
-    @output = $stdout
+  def initialize(function = ARGV.first, input = $stdin, output = $stdout, output_format = ARGV.last)
+    @input = input
+    @output = output
     # @function = ARGV.first
-    @function = "identity"
+    @function = function
     # @output_format = ARGV.last
-    @output_format = "csv"
+    @output_format = output_format
   end
-  def self.output_format
+  def output_format
     @output_format
   end
-  def self.output
+  def output
     @output
   end
-  def self.input
+  def input
     @input
   end
-  def self.function
+  def function
     @function
   end
 end
