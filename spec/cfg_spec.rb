@@ -20,4 +20,22 @@ describe Cfg do
     cfg = Cfg.new
     cfg.function
   end
+  it "should be able to set function" do
+    cfg = Cfg.new("mean")
+    cfg.function.should eql "mean"
+  end
+  it "should be able to set output_format" do
+    cfg = Cfg.new(nil, nil, nil, "html")
+    cfg.output_format.should eql "html"
+  end
+  it "should be able to set input" #do
+    # input = StringIO.new("0")
+    # cfg = Cfg.new(nil, input, nil, nil)
+    # cfg.input.should eql "0"
+  #end
+  it "should be able to set output" #do
+    # output = StringIO.new
+    # cfg = Cfg.new(nil, nil, output, nil)
+    # cfg.output.should eql ""
+  #end
 end
