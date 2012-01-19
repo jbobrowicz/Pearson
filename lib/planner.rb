@@ -5,9 +5,9 @@ require_relative "cfg"
 
 class Planner
   def initialize(cfg)
-    @input = InputReader.new(cfg.input)
-    @output = OutputWriterFactory.create_output_writer(cfg.output_format, cfg.output)
-    @function = FunctionFactory.create_function(cfg.function)
+    @input = InputReader.new(cfg)
+    @output = OutputWriterFactory.create_output_writer(cfg)
+    @function = FunctionFactory.create_function(cfg)
   end
 
   def run

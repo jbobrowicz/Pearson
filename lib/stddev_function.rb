@@ -1,7 +1,8 @@
 require_relative "function_factory"
+require_relative "cfg"
 
 class StddevFunction
   def apply(numbers) 
-    [Math.sqrt(FunctionFactory.create_function("variance").apply(numbers).first)]
+    [Math.sqrt(1/numbers.length.to_f * ((numbers.inject(0){|acc, i| (acc + (i - (numbers.inject(0) {|acc, n| acc + n} / numbers.size.to_f)))**2})-1))]
   end
 end

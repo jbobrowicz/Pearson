@@ -7,8 +7,8 @@ require_relative "stddev_function"
 
 
 class FunctionFactory
-  def self.create_function(function)
-    case function
+  def self.create_function(cfg)
+    case cfg.function
     when "identity"
       IdentityFunction.new
     when "mean"

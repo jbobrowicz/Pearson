@@ -1,8 +1,8 @@
 require_relative "function_factory"
+require_relative "cfg"
 
 class VarianceFunction
   def apply(numbers) 
-    avg = FunctionFactory.create_function("mean").apply(numbers).first # it's kinda too long to make it inline :P
-    [1/numbers.length.to_f * ((numbers.inject(0){|acc, i| (acc + (i - avg))**2})-1)]
+    [1/numbers.length.to_f * ((numbers.inject(0){|acc, i| (acc + (i - (numbers.inject(0) {|acc, n| acc + n} / numbers.size.to_f)))**2})-1)]
   end
 end

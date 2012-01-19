@@ -1,24 +1,30 @@
 require_relative "../lib/function_factory"
+require_relative "../lib/cfg"
 
 describe FunctionFactory do
   it "should create identity function" do
-    identity = FunctionFactory.create_function("identity")
+    cfg = Cfg.new("identity")
+    identity = FunctionFactory.create_function(cfg)
     identity.should be_an IdentityFunction
   end
   it "should create mean function" do
-    mean = FunctionFactory.create_function("mean")
+    cfg = Cfg.new("mean")
+    mean = FunctionFactory.create_function(cfg)
     mean.should be_an MeanFunction
   end
   it "should create median function" do
-    median = FunctionFactory.create_function("median")
+    cfg = Cfg.new("median")
+    median = FunctionFactory.create_function(cfg)
     median.should be_an MedianFunction
   end
   it "should create variance function" do
-    var = FunctionFactory.create_function("variance")
+    cfg = Cfg.new("variance")
+    var = FunctionFactory.create_function(cfg)
     var.should be_an VarianceFunction
   end
   it "should create stddev function" do
-    stddev = FunctionFactory.create_function("stddev")
+    cfg = Cfg.new("stddev")
+    stddev = FunctionFactory.create_function(cfg)
     stddev.should be_an StddevFunction
   end
 end
