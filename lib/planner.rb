@@ -4,10 +4,10 @@ require_relative "output_writer_factory"
 require_relative "cfg"
 
 class Planner
-  def initialize(function, input, output, output_format)
-    @input = InputReader.new(input)
-    @output = OutputWriterFactory.create_output_writer(output_format, output)
-    @function = FunctionFactory.create_function(function)
+  def initialize(cfg)
+    @input = InputReader.new(cfg.input)
+    @output = OutputWriterFactory.create_output_writer(cfg.output_format, cfg.output)
+    @function = FunctionFactory.create_function(cfg.function)
   end
 
   def run

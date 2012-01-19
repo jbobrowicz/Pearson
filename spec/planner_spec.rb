@@ -3,9 +3,9 @@ require_relative "../lib/cfg"
 
 describe Planner do
   def planner_output_for(function, input)
-    cfg = Cfg.new
     output = StringIO.new
-    planner = Planner.new(function, StringIO.new(input), output, cfg.output_format)
+    cfg = Cfg.new(function, StringIO.new(input), output)
+    planner = Planner.new(cfg)
     planner.run
     output.string
   end
