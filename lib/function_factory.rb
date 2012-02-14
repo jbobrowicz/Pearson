@@ -5,22 +5,17 @@ require_relative "median_function"
 require_relative "variance_function"
 require_relative "stddev_function"
 
+# Dir['*_function.rb'].each {|f| require_relative f.gsub('.rb','')} # it doesnt work, but why ?
 
 class FunctionFactory
   def self.create_function(cfg)
-    case cfg.function
-    when "identity"
-      IdentityFunction.new
-    when "mean"
-      MeanFunction.new
-    when "median"
-      MedianFunction.new
-    when "variance"
-      VarianceFunction.new
-    when "stddev"
-      StddevFunction.new
-    else
-      raise "Error: Unsupported function #{@function}"
+    begin
+      (eval cfg.function.capitalize + "Function").new
+    rescue 
+      raise "Error: Unsupported function #{cfg.function}"
     end
   end
 end
+
+
+
