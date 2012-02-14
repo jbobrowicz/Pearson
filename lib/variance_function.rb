@@ -1,5 +1,4 @@
 require_relative "function_factory"
-require_relative "cfg"
 
 class VarianceFunction
   def apply(numbers) 
