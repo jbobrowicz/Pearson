@@ -28,14 +28,14 @@ describe Cfg do
     cfg = Cfg.new(nil, nil, nil, "html")
     cfg.output_format.should eql "html"
   end
-  it "should be able to set input" #do
-    # input = StringIO.new("0")
-    # cfg = Cfg.new(nil, input, nil, nil)
-    # cfg.input.should eql "0"
-  #end
-  it "should be able to set output" #do
-    # output = StringIO.new
-    # cfg = Cfg.new(nil, nil, output, nil)
-    # cfg.output.should eql ""
-  #end
+  it "should be able to set input" do
+      input = "identity"
+      cfg = Cfg.new(nil, input, nil, nil)
+      cfg.input.should eql input
+    end
+  it "should be able to set output" do
+      output = "identity"
+      cfg = Cfg.new(nil, nil, output, nil)
+      cfg.output.should eql output
+    end
 end
