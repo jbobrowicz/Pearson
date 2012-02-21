@@ -1,6 +1,5 @@
-require_relative "../../lib/tokenizer"
+require_relative "../../lib/html_check"
 
 Then /^the result should contain an html tags$/ do
-  pending 
-  # is_html(@actual_result).should_be true
+  is_html(@actual_result).should be true
 end
