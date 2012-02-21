@@ -19,8 +19,7 @@ describe Planner do
     planner_output_for("identity", "10,20").should == "10.0,20.0"
   end
   it "should output error message for an unsupported function" do
-    code = lambda
-    do
+    code = lambda do
       planner = Planner.new(["bbbbbbbb"], StringIO.new("10,20"), StringIO.new)
       planner.run
     end
